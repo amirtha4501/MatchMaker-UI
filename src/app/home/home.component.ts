@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TestimonialService } from '../services/testimonial.service';
 
 @Component({
   selector: 'app-home',
@@ -7,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  testimonials: any = [];
+
+  constructor(
+    private testimonialService: TestimonialService
+  ) {
+    this.getTestimonials()
+  }
+
+  getTestimonials() {
+    this.testimonialService.getTestimonials().subscribe(
+      (res) => {
+        console.log("res---", res);
+        this.testimonials = res;
+      }
+    )
+  }
 }

@@ -1,0 +1,73 @@
+@media screen and (max-width: 992px) {
+  nav li a {
+      font-size: 20px;
+      color: white;
+  }
+}
+
+/* On screens that are 600px wide or less, the background color is olive */
+@media screen and (max-width: 700px) {
+  nav li a {
+      font-size: 20px;
+      color: white;
+  }
+  nav a img {
+      width: 75px;
+  }
+}
+
+@media screen and (max-width: 2700px) {
+  nav li a {
+      font-size: 20px;
+      color: white;
+  }
+}
+
+nav ul li a:hover {
+  background-color: orange;
+  border-radius: 5px;
+}
+.main {
+  background-image: linear-gradient(to right, rgb(1, 107, 1) , rgb(106, 231, 4));
+}
+
+nav h5 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.navbar-default{
+  background:transparent;
+  background-image:none;
+  border-color:transparent;
+  box-shadow:none;
+}
+
+.navbar-toggler {
+  outline: none;
+}
+
+.navbar-toggler {
+  font-size: 30px;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar-toggler:hover {
+  background-image: linear-gradient( rgb(1, 2, 70), rgb(23, 63, 240),  rgb(1, 2, 70));
+}
+
+.navbar-toggler:focus {
+  outline: 3px solid orange;
+}
+
+.modal-header {
+  background-image: linear-gradient(to right, rgb(2, 55, 228), rgb(67, 180, 245), rgb(2, 55, 228));
+}
+.del {
+  background-image: linear-gradient(to right, rgb(228, 2, 2), rgb(252, 113, 103), rgb(228, 2, 2));
+}
+
+.dropdown-toggle, .nav-link, .dropdown-item {
+  cursor: pointer;
+}

@@ -1,1 +1,104 @@
-<p>home works!</p>
+<div class="home">
+  <div class="container mt-3">
+    <div class="container-fluid bg-white">
+      <section>
+        <h5>Our Story</h5>
+        <p>We started our journey with a passion for creating amazing products and providing top-notch services to our
+          customers.</p>
+      </section>
+      <section>
+        <h5>Our Mission</h5>
+        <p>Our mission is to make a positive impact in the lives of people through innovation and excellence in
+          everything
+          we do.</p>
+      </section>
+      <h5>About</h5>
+      <ul>
+        <li>
+          <p class="text-break">
+            Match Maker Matrimonial Website provides astrologically calculated marriage compatibility results.
+            We analyze and present marriage horoscope predictions, helping you make informed decisions about your future
+            life partner.
+          </p>
+        </li>
+        <li>
+          <p class="text-break">
+            Due to the offline method, profiles are sent to your mobiles via WhatsApp.
+            This convenient approach ensures that you receive profiles directly on your mobile device for a seamless
+            experience.
+          </p>
+        </li>
+        <li>
+          <p class="text-break">
+            If you choose the offline method, profiles cannot be viewed online.
+            Offline fees apply for this service, which means that profiles will be exclusively available through offline
+            means.
+          </p>
+        </li>
+        <li>
+          <p class="text-break">
+            This website makes it easy for everyone to register. If you face difficulties in registering,
+            we recommend sending the profile details to us via WhatsApp, and we will provide you with a unique user ID
+            for
+            registration.
+          </p>
+        </li>
+        <li>
+          <p class="text-break">
+            Profiles with defects will receive extra attention.
+            Our team pays special attention to profiles that may have issues or inconsistencies, ensuring a high-quality
+            matchmaking experience.
+          </p>
+        </li>
+        <li>
+          <p class="text-break">
+            After confirming the authenticity of the profiles, the user ID for registration will be provided.
+            For registered profiles, the user ID will be provided within 24 hours of registration, ensuring a smooth and
+            efficient process.
+          </p>
+        </li>
+        <li>
+          <p class="text-break">
+            Married couples should not register on this website.
+            Please note that this platform is exclusively for individuals seeking marriage, and only one user ID will be
+            provided for one profile.
+          </p>
+        </li>
+        <li>
+          <p class="text-break">
+            Parental consent is essential for registration.
+            We prioritize the importance of family consent, ensuring that the registration process aligns with
+            traditional
+            values.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>.
+
+  <div class="container pl-5 pr-5">
+    <h5 class="pb-3">Testimonials</h5>
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let testimonial of testimonials; index as i">
+        <div class="card">
+          <h5 class="card-header">{{ testimonial.testimonial_text }}</h5>
+          <div class="card-body">
+            <p class="card-text mb-0">
+              Comments: {{ testimonial.testimonial_text }}
+            </p>
+            <p class="card-text mb-0">
+              Rating: {{ testimonial.rating }}
+            </p>
+            <p class="card-text mb-0">
+              Relationship length: {{ testimonial.relationship_length }}
+            </p>
+            <p class="card-text mb-0">
+              Date: {{ testimonial.submit_date }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
