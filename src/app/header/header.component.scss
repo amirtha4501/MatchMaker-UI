@@ -1,6 +1,6 @@
 @media screen and (max-width: 992px) {
   nav li a {
-      font-size: 20px;
+      font-size: 17px;
       color: white;
   }
 }
@@ -8,7 +8,7 @@
 /* On screens that are 600px wide or less, the background color is olive */
 @media screen and (max-width: 700px) {
   nav li a {
-      font-size: 20px;
+      font-size: 17px;
       color: white;
   }
   nav a img {
@@ -18,7 +18,7 @@
 
 @media screen and (max-width: 2700px) {
   nav li a {
-      font-size: 20px;
+      font-size: 17px;
       color: white;
   }
 }
@@ -28,6 +28,7 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 .main {
+  justify-content: space-between;
   background-image: linear-gradient(to right, rgb(1, 107, 1) , rgb(106, 231, 4));
 }
 
