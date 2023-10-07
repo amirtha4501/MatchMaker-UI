@@ -11,8 +11,12 @@ export class TestimonialService {
   constructor(private http: HttpClient) { }
 
   getTestimonials() {
-    console.log("Called service")
     return this.http.get(`${environment.api}/testimonial`);
+  }
+
+  createTestimonial(payload: any) {
+    console.log("Called service")
+    return this.http.post(`${environment.api}/testimonial`, payload);
   }
 
 }

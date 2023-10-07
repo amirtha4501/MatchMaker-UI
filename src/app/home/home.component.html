@@ -79,7 +79,7 @@
   <div class="container pl-5 pr-5">
     <h5 class="pb-3">Testimonials</h5>
     <div class="row">
-      <div class="col-sm-4" *ngFor="let testimonial of testimonials; index as i">
+      <div class="col-sm-4 mt-2" *ngFor="let testimonial of testimonials; index as i">
         <div class="card">
           <h5 class="card-header">{{ testimonial.testimonial_text }}</h5>
           <div class="card-body">
@@ -99,6 +99,22 @@
         </div>
       </div>
     </div>
+    <h5 class="pb-3 mt-5">Write Testimonial...</h5>
+    <form novalidate [formGroup]="testimonialForm" class="col-6" autocomplete="off">
+      <div class="form-group">
+        <label for="testimonial_text" class="col-form-label">Comments</label>
+        <input type="text" formControlName="testimonial_text" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="rating" class="col-form-label">Rating</label>
+        <input type="number" formControlName="rating" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="relationship_length" class="col-form-label">Relationship length (years)</label>
+        <input type="number" formControlName="relationship_length" class="form-control" required>
+      </div>
+      <button type="button" class="btn btn-secondary mr-2" id="cancel-login" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary" (click)='onTestimonialSubmit()' data-dismiss="modal">Write</button>
+    </form>
   </div>
-
 </div>
