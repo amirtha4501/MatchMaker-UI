@@ -1,0 +1,46 @@
+<div class="container mt-4 mb-5 pb-4">
+  <button style="float: right;" (click)="toggleRegForm()" class="btn mt-4">{{ !show ? "Add Plan" : "Cancel"}}</button>
+  <br>
+  <h5 *ngIf="show" class="pb-3 mt-5">Create Plan</h5>
+  <form *ngIf="show" novalidate [formGroup]="planForm" class="col-6" autocomplete="off">
+    <div class="form-group">
+      <label for="plan_name" class="col-form-label">Plan name</label>
+      <input type="text" formControlName="plan_name" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="currency" class="col-form-label">Currency</label>
+      <input type="text" formControlName="currency" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="price" class="col-form-label">Price</label>
+      <input type="number" formControlName="price" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="billing_cycle" class="col-form-label">Billing cycle</label>
+      <input type="text" formControlName="billing_cycle" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="description" class="col-form-label">Description</label>
+      <input type="text" formControlName="description" class="form-control" required>
+    </div>
+    <button type="button" class="btn btn-secondary mr-2" (click)='clear()' data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary" (click)='onPlanSubmit()' data-dismiss="modal">{{ isEdit? "Update" : "Create"}}</button>
+  </form>
+</div>
+
+<div class="container-fluid">
+  <div class="mt-5 mb-5 col-10 mx-auto text-center card-grid rounded">
+    <div *ngFor="let plan of plans; index as i" class="card mt-3">
+      <h5 class="card-header">{{ plan.plan_name }}</h5>
+      <div class="card-body p-1">
+        <h6>Plan Code: <code>{{ plan.plan_id }}</code></h6>
+        <h6><small>{{ plan.description | titlecase }}</small></h6>
+        <h6><small>Billing: </small>{{ plan.billing_cycle | titlecase }}</h6>
+        <h6><small *ngIf="plan.price; else elseNil">INR </small>{{ plan.price }}</h6>
+        <ng-template #elseNil><small>Nil</small></ng-template>
+        <button type="button" class="btn btn-info btn-sm mr-2"(click)='onEdit(plan)' data-dismiss="modal">Edit</button>
+        <button type="submit" class="btn btn-danger btn-sm" (click)='onDelete(plan.plan_id)' data-dismiss="modal">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

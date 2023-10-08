@@ -13,6 +13,7 @@ import { ProfilesComponent } from './profiles/profiles.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
 import { UserProfilesComponent } from './user-profiles/user-profiles.component';
 import { RegisterProfileComponent } from './register-profile/register-profile.component';
+import { PlanComponent } from './plan/plan.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { RegisterProfileComponent } from './register-profile/register-profile.co
     ProfilesComponent,
     ProfileDetailComponent,
     UserProfilesComponent,
-    RegisterProfileComponent
+    RegisterProfileComponent,
+    PlanComponent
   ],
   imports: [
     BrowserModule,
