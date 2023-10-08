@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
+import { UserProfilesComponent } from './user-profiles/user-profiles.component';
+import { RegisterProfileComponent } from './register-profile/register-profile.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
     FooterComponent,
     HomeComponent,
     ProfilesComponent,
-    ProfileDetailComponent
+    ProfileDetailComponent,
+    UserProfilesComponent,
+    RegisterProfileComponent
   ],
   imports: [
     BrowserModule,

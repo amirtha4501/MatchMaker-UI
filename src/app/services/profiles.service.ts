@@ -11,8 +11,13 @@ export class ProfilesService {
     private http: HttpClient
   ) { }
 
-  getProfiles() {
-    return this.http.get(`${environment.api}/profile`);
+  createProfile(payload: any) {
+    return this.http.post(`${environment.api}/profile`, payload);
+  }
+
+  getProfiles(param: any) {
+    let api = param.user_id ? `?user_id=${param.user_id}` : "";
+    return this.http.get(`${environment.api}/profile` + api);
   }
 
   getProfileById(id: string) {

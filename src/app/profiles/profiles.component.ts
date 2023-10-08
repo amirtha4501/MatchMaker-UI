@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ProfilesService } from '../services/profiles.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { ProfilesService } from '../services/profiles.service';
 })
 export class ProfilesComponent {
 
+  @Input() userId: any;
   profiles: any = [];
 
   constructor(
@@ -16,10 +17,15 @@ export class ProfilesComponent {
 
   ngOnInit(): void {
     this.getProfiles();
+    console.log(this.userId);
   }
 
   getProfiles() {
-    this.profileService.getProfiles().subscribe(
+    let param = {
+      user_id: this.userId
+    };
+
+    this.profileService.getProfiles(param).subscribe(
       (profiles) => {
         this.profiles = profiles;
         this.profiles.forEach((profile: { [x: string]: string; }, i: number) => {

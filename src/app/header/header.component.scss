@@ -23,10 +23,20 @@
   }
 }
 
-nav ul li a:hover {
+nav ul li a:hover, .dropdown-toggle:hover {
   background-color: orange;
   border-radius: 5px;
 }
+
+.dropdown-item {
+  cursor: pointer;
+  color: black !important;
+}
+.dropdown-toggle.nav-link {
+  cursor: pointer;
+  color: white !important;
+}
+
 .main {
   justify-content: space-between;
   background-image: linear-gradient(to right, rgb(1, 107, 1) , rgb(106, 231, 4));

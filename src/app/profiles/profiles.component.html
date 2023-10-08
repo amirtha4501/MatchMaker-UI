@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="mt-5 mb-5 col-10 mx-auto text-center card-grid rounded">
-      <div *ngFor="let profile of profiles; index as i" class="card mt-5 mb-5 text-center">
+      <div *ngFor="let profile of profiles; index as i" class="card mt-3 text-center">
           <div *ngIf="profile.gender != 'male'">
               <img class="card-img-top img-fluid" src={{profile.img_data_1}} onError="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSo7WfE6wFfdpeFph92LdEFJFnula0ecIObiQ&usqp=CAU';" alt="Card image">
           </div>

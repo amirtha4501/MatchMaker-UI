@@ -1,0 +1,10 @@
+<div class="container mt-4 mb-5 pb-4">
+  <button style="float: right;" (click)="toggleRegForm()" class="btn mt-4">{{ !show ? "Add Profile" : "Cancel"}}</button>
+</div>
+
+<div *ngIf="show">
+  <app-register-profile></app-register-profile>
+  <hr>
+</div>
+
+<app-profiles [userId]="userId"></app-profiles>
