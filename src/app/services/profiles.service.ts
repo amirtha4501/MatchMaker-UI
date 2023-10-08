@@ -15,6 +15,10 @@ export class ProfilesService {
     return this.http.post(`${environment.api}/profile`, payload);
   }
 
+  getUsers() {
+    return this.http.get(`${environment.api}/auth/users`);
+  }
+
   getProfiles(param: any) {
     let api = param.user_id ? `?user_id=${param.user_id}` : "";
     return this.http.get(`${environment.api}/profile` + api);

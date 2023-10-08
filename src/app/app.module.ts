@@ -14,6 +14,7 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
 import { UserProfilesComponent } from './user-profiles/user-profiles.component';
 import { RegisterProfileComponent } from './register-profile/register-profile.component';
 import { PlanComponent } from './plan/plan.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { PlanComponent } from './plan/plan.component';
     ProfileDetailComponent,
     UserProfilesComponent,
     RegisterProfileComponent,
-    PlanComponent
+    PlanComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

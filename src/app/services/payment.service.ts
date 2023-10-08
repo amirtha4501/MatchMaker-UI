@@ -5,13 +5,9 @@ import { environment } from "src/environments/environment";
 @Injectable({
   providedIn: 'root'
 })
-export class PlansService {
+export class PaymentService {
 
   constructor(private http: HttpClient) { }
-
-  getPayments() {
-    return this.http.get(`${environment.api}/payment`);
-  }
 
   getPlans() {
     return this.http.get(`${environment.api}/plan`);
@@ -27,5 +23,4 @@ export class PlansService {
 
   deletePlan(id: number) {
     return this.http.delete(`${environment.api}/plan/${id}`);
-  }
-}
+  }}

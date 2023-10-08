@@ -1,0 +1,95 @@
+<div class="container mt-4 mb-5 pb-4">
+  <button style="float: right;" (click)="toggleForm()" class="btn mt-4">{{ !show ? "Add Payment" : "Cancel"}}</button>
+  <br>
+  <h5 *ngIf="show" class="pb-3 mt-5">Create Payment</h5>
+  <form *ngIf="show" novalidate [formGroup]="paymentForm" class="col-6" autocomplete="off">
+    <div class="form-group">
+      <label for="amount" class="col-form-label">Payment amount</label>
+      <input type="text" formControlName="amount" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="currency" class="col-form-label">Currency</label>
+      <input type="text" formControlName="currency" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="payment_gateway" class="col-form-label">Payment gateway</label>
+      <input type="text" formControlName="payment_gateway" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="payment_method" class="col-form-label">Payment method</label>
+      <input type="text" formControlName="payment_method" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="transaction_id" class="col-form-label">Transaction id</label>
+      <input type="text" formControlName="transaction_id" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="status" class="col-form-label">Status</label>
+      <input type="text" formControlName="status" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="plan_id" class="col-form-label">Plan</label>
+      <input type="text" formControlName="plan_id" class="form-control" list="plan_id">
+      <datalist id="plan_id">
+        <option value="{{ plan.plan_id }}" *ngFor="let plan of plans">{{plan.plan_name}}</option>
+      </datalist>
+    </div>
+    <div class="form-group">
+      <label for="user_id" class="col-form-label">User</label>
+      <input type="text" formControlName="user_id" class="form-control" list="user_id">
+      <datalist id="user_id">
+        <option value="{{ user.user_id }}" *ngFor="let user of users">{{user.user_name}}</option>
+      </datalist>
+    </div>
+
+    <button type="button" class="btn btn-secondary mr-2" (click)='clear()' data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary" (click)='onPaymentSubmit()' data-dismiss="modal">{{ isEdit? "Update" :
+      "Create"}}</button>
+  </form>
+</div>
+
+<div class="container-fluid">
+  <!-- <div class="mt-5 mb-5 col-10 mx-auto text-center card-grid rounded">
+    <div *ngFor="let payment of payments; index as i" class="card mt-3">
+      <h5 class="card-header">{{ payment.plan_name }}</h5>
+      <div class="card-body p-1">
+        <h6>Plan Code: <code>{{ plan.plan_id }}</code></h6>
+        <h6><small>{{ plan.description | titlecase }}</small></h6>
+        <h6><small>Billing: </small>{{ plan.billing_cycle | titlecase }}</h6>
+        <h6><small *ngIf="plan.price; else elseNil">INR </small>{{ plan.price }}</h6>
+        <ng-template #elseNil><small>Nil</small></ng-template>
+        <button type="button" class="btn btn-info btn-sm mr-2" (click)='onEdit(plan)' data-dismiss="modal">Edit</button>
+        <button type="submit" class="btn btn-danger btn-sm" (click)='onDelete(plan.plan_id)'
+          data-dismiss="modal">Delete</button>
+      </div>
+    </div>
+  </div> -->
+  <div class="container mt-5">
+    <table class="table table-bordered text-center rounded">
+      <thead>
+        <tr>
+          <th>currency</th>
+          <th>amount</th>
+          <th>status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let payment of payments">
+          <td>{{ payment.currency }}</td>
+          <td>{{ payment.amount }}</td>
+          <td>{{ payment.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- <div class="container row mx-auto mt-5 mb-5">
+    <table class="table-bordered text-center mb-2 mx-auto">
+      <tbody>
+        <tr>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+</div>
