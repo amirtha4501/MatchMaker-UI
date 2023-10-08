@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="mt-5 mb-5 col-10 mx-auto text-center card-grid rounded">
+      <div *ngFor="let profile of profiles; index as i" class="card mt-5 mb-5 text-center">
+          <div *ngIf="profile.gender != 'male'">
+              <img class="card-img-top img-fluid" src={{profile.img_data_1}} onError="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSo7WfE6wFfdpeFph92LdEFJFnula0ecIObiQ&usqp=CAU';" alt="Card image">
+          </div>
+          <div *ngIf="profile.gender != 'female'">
+              <img class="card-img-top img-fluid" src={{profile.img_data_1}} onError="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSfmJO1vZOid-nPBHG4aMhenFmy5zW4qPg_-g&usqp=CAU';" alt="Card image">
+          </div>
+          <div class="card-body p-1">
+              <h6>Id: <code>{{ profile.profile_id }}</code></h6>
+              <h6 class="text-center">{{ profile.name | titlecase }}<small *ngIf="profile.age"> - {{ profile.age }}</small></h6>
+              <h6 class="text-center">DOB:  <small *ngIf="profile.dob; else elseNil">{{ profile.dob }}</small></h6>
+              <ng-template #elseNil><small>Nil</small></ng-template>
+          </div>
+          <div class="card-footer p-2 pr-3 text-right"><a [routerLink]="['/profiledetail', profile.profile_id]">View profile</a></div>
+      </div>
+  </div>
+</div>
