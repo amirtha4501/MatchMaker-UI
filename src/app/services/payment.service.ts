@@ -9,18 +9,11 @@ export class PaymentService {
 
   constructor(private http: HttpClient) { }
 
-  getPlans() {
-    return this.http.get(`${environment.api}/plan`);
+  getPayments() {
+    return this.http.get(`${environment.api}/payment`);
   }
 
-  createPlan(payload: any) {
-    return this.http.post(`${environment.api}/plan`, payload);
+  createPayment(payload: any) {
+    return this.http.post(`${environment.api}/payment`, payload);
   }
-
-  updatePlan(payload: any, plan_id: number) {
-    return this.http.patch(`${environment.api}/plan/${plan_id}`, payload);
-  }
-
-  deletePlan(id: number) {
-    return this.http.delete(`${environment.api}/plan/${id}`);
-  }}
+}

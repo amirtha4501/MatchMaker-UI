@@ -9,10 +9,6 @@ export class PlansService {
 
   constructor(private http: HttpClient) { }
 
-  getPayments() {
-    return this.http.get(`${environment.api}/payment`);
-  }
-
   getPlans() {
     return this.http.get(`${environment.api}/plan`);
   }
