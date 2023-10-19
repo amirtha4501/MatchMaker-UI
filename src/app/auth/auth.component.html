@@ -1,0 +1,47 @@
+<div class="container">
+  <form novalidate [formGroup]="authLoginForm" *ngIf="!signup" class="col-6 mx-auto mt-5 mb-5" autocomplete="off">
+    <h5 class="pb-3 mt-5 text-center">Sign In</h5>
+    <div class="form-group">
+      <label for="email" class="col-form-label">Email</label>
+      <input type="text" formControlName="email" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="password" class="col-form-label">Password</label>
+      <input type="password" formControlName="password" class="form-control" required>
+    </div>
+
+    <button type="button" class="btn btn-secondary mr-2" id="cancel-login" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary" (click)='onAuthLoginSubmit()' data-dismiss="modal">Sign In</button>
+  </form>
+
+  <form novalidate [formGroup]="authForm" *ngIf="signup" class="col-6 mx-auto mt-5 mb-5" autocomplete="off">
+    <h5 class="pb-3 mt-5 text-center">Sign Up</h5>
+    <div class="form-group">
+      <label for="user_name" class="col-form-label">Name</label>
+      <input type="text" formControlName="user_name" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="email" class="col-form-label">Email</label>
+      <input type="text" formControlName="email" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="password" class="col-form-label">Password</label>
+      <input type="password" formControlName="password" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="user_type" class="col-form-label">User Type</label>
+      <input type="user_type" formControlName="user_type" class="form-control" required>
+    </div>
+    <button type="button" class="btn btn-secondary mr-2" id="cancel-login" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary" (click)='onAuthSubmit()' data-dismiss="modal">Sign Up</button>
+  </form>
+
+  <hr>
+  <p class="mb-5 pb-5 text-center" *ngIf="!signup">
+    Don't have an account create one <button class="btn btn-sm" (click)="signup=true">Click here</button>
+  </p>
+  <p class="mb-5 pb-5 text-center" *ngIf="signup">
+    Already have an account <button class="btn btn-sm" (click)="signup=true">Click here</button>
+  </p>
+
+</div>

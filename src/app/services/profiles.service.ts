@@ -11,6 +11,14 @@ export class ProfilesService {
     private http: HttpClient
   ) { }
 
+  loginUser(payload: any) {
+    return this.http.post(`${environment.api}/auth/signin`, payload);
+  }
+
+  createUser(payload: any) {
+    return this.http.post(`${environment.api}/auth/signup`, payload);
+  }
+
   createProfile(payload: any) {
     return this.http.post(`${environment.api}/profile`, payload);
   }

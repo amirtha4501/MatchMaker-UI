@@ -16,6 +16,7 @@ import { RegisterProfileComponent } from './register-profile/register-profile.co
 import { PlanComponent } from './plan/plan.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CouponComponent } from './coupon/coupon.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CouponComponent } from './coupon/coupon.component';
     RegisterProfileComponent,
     PlanComponent,
     CouponComponent,
-    PaymentComponent
+    PaymentComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
