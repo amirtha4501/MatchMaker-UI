@@ -15,6 +15,7 @@ import { UserProfilesComponent } from './user-profiles/user-profiles.component';
 import { RegisterProfileComponent } from './register-profile/register-profile.component';
 import { PlanComponent } from './plan/plan.component';
 import { PaymentComponent } from './payment/payment.component';
+import { CouponComponent } from './coupon/coupon.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { PaymentComponent } from './payment/payment.component';
     UserProfilesComponent,
     RegisterProfileComponent,
     PlanComponent,
+    CouponComponent,
     PaymentComponent
   ],
   imports: [

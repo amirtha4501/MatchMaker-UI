@@ -6,6 +6,7 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
 import { UserProfilesComponent } from './user-profiles/user-profiles.component';
 import { PlanComponent } from './plan/plan.component';
 import { PaymentComponent } from './payment/payment.component';
+import { CouponComponent } from './coupon/coupon.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'profiledetail/:id', component: ProfileDetailComponent },
   { path: 'user-profiles', component: UserProfilesComponent },
   { path: 'plans', component: PlanComponent },
+  { path: 'coupons', component: CouponComponent },
   { path: 'payments', component: PaymentComponent },
 ];
 

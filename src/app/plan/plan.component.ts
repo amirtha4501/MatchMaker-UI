@@ -38,8 +38,9 @@ export class PlanComponent {
     );
   }
 
-  toggleRegForm() {
+  toggleForm() {
     this.show = !this.show;
+    this.isEdit = false;
     this.planForm.reset();
   }
 
@@ -74,7 +75,7 @@ export class PlanComponent {
       this.planService.createPlan(payload).subscribe(
         () => {
           this.getPlans();
-          this.toggleRegForm();
+          this.toggleForm();
           alert("Successfully created");
           this.planForm.reset();
         }
@@ -83,7 +84,7 @@ export class PlanComponent {
       this.planService.updatePlan(payload, this.plan_id).subscribe(
         () => {
           this.getPlans();
-          this.toggleRegForm();
+          this.toggleForm();
           alert("Successfully updated");
           this.planForm.reset();
         }

@@ -1,7 +1,7 @@
 <div class="container mt-4 mb-5 pb-4">
-  <button style="float: right;" (click)="toggleRegForm()" class="btn mt-4">{{ !show ? "Add Plan" : "Cancel"}}</button>
+  <button style="float: right;" (click)="toggleForm()" class="btn mt-4">{{ !show ? "Add Plan" : "Cancel"}}</button>
   <br>
-  <h5 *ngIf="show" class="pb-3 mt-5">Create Plan</h5>
+  <h5 *ngIf="show" class="pb-3 mt-5">{{ isEdit? "Update" : "Create"}} Plan</h5>
   <form *ngIf="show" novalidate [formGroup]="planForm" class="col-6" autocomplete="off">
     <div class="form-group">
       <label for="plan_name" class="col-form-label">Plan name</label>

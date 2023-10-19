@@ -1,0 +1,81 @@
+<div class="container mt-4 mb-5 pb-4">
+  <button style="float: right;" (click)="toggleForm()" class="btn mt-4">{{ !show ? "Add Coupon" : "Cancel"}}</button>
+  <br>
+  <h5 *ngIf="show" class="pb-3 mt-5">Create Coupon</h5>
+  <form *ngIf="show" novalidate [formGroup]="couponForm" class="col-6" autocomplete="off">
+    <div class="form-group">
+      <label for="coupon_code" class="col-form-label">Coupon Code</label>
+      <input type="text" formControlName="coupon_code" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="discount_amount" class="col-form-label">Discount Amount</label>
+      <input type="number" formControlName="discount_amount" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="usage_limit" class="col-form-label">Usage Limit</label>
+      <input type="number" formControlName="usage_limit" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="expiry_date" class="col-form-label">Expiry Date</label>
+      <input type="datetime-local" formControlName="expiry_date" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="active" class="col-form-label">Status</label>
+      <input type="text" formControlName="active" class="form-control" list="active">
+      <datalist id="active">
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+      </datalist>
+
+    </div>
+    <!-- <div class="form-group">
+      <label for="plan_id" class="col-form-label">Plan</label>
+      <input type="text" formControlName="plan_id" class="form-control" list="plan_id">
+      <datalist id="plan_id">
+        <option value="{{ plan.plan_id }}" *ngFor="let plan of plans">{{plan.plan_name}}</option>
+      </datalist>
+    </div>
+    <div class="form-group">
+      <label for="user_id" class="col-form-label">User</label>
+      <input type="text" formControlName="user_id" class="form-control" list="user_id">
+      <datalist id="user_id">
+        <option value="{{ user.user_id }}" *ngFor="let user of users">{{user.user_name}}</option>
+      </datalist>
+    </div> -->
+
+    <button type="button" class="btn btn-secondary mr-2" (click)='clear()' data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary" (click)='onCouponSubmit()' data-dismiss="modal">{{ isEdit? "Update" : "Create"}}</button>
+  </form>
+</div>
+
+<div class="container-fluid mb-5 pb-5">
+  <div class="container mt-5">
+    <table class="table table-bordered text-center rounded">
+      <thead>
+        <tr>
+          <th>Coupon ID</th>
+          <th>Coupon Code</th>
+          <th>Discount Amount</th>
+          <th>Expiry Date</th>
+          <th>Usage Limit</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let coupon of coupons">
+          <td>{{ coupon.coupon_id }}</td>
+          <td>{{ coupon.coupon_code }}</td>
+          <td>{{ coupon.discount_amount }}</td>
+          <td>{{ coupon.expiry_date }}</td>
+          <td>{{ coupon.usage_limit }}</td>
+          <td>{{ coupon.active ? "Active" : "Inactive" }}</td>
+          <td>
+            <button type="button" class="btn btn-info btn-sm mr-2"(click)='onEdit(coupon)' data-dismiss="modal">Edit</button>
+            <button type="submit" class="btn btn-danger btn-sm" (click)='onDelete(coupon.coupon_id)' data-dismiss="modal">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
