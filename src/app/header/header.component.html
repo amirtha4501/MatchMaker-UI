@@ -19,13 +19,13 @@
           <li class="nav-item"><a class="nav-link" routerLink='/coupons'>Coupons</a></li>
           <li class="nav-item"><a class="nav-link" routerLink='/payments'>Payments</a></li>
           
-          <li class="nav-item"><a class="nav-link" routerLink='/auth'>Sign In</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink='/auth' *ngIf="!this.profileService.token">Sign In</a></li>
 
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Profile</a>
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngIf="this.profileService.token">My Profile</a>
               
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+          <div class="dropdown-menu dropdown-menu-right" *ngIf="this.profileService.token" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item text-dark"  data-toggle="collapse" data-target=".navbar-collapse.show" routerLink='/user-profiles'>View My Profiles</a>
-              <a class="dropdown-item text-dark" data-toggle="collapse" data-target=".navbar-collapse.show"  routerLink='/home'>Log Out</a>
+              <a class="dropdown-item text-dark" data-toggle="collapse" data-target=".navbar-collapse.show" (click)="signout()">Log Out</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item dropdown-toggle text-dark pt-0 pb-0" id="settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>
               <div class="dropdown-menu" aria-labelledby="settings">
@@ -33,25 +33,6 @@
                   <a class="dropdown-item text-dark" data-target="#delete-modal" data-toggle="modal">Delete Profile</a>
               </div>
           </div>
-
-          <!-- <li class="nav-item dropdown" *ngIf="isLogged">
-              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Profile</a>
-              
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item text-dark" (click)="viewMyProfile()" data-toggle="collapse" data-target=".navbar-collapse.show" routerLink='/profiledetail/{{id}}'>View Profile</a>
-                  <a class="dropdown-item text-dark" data-toggle="collapse" data-target=".navbar-collapse.show" routerLink='/update/{{id}}'>Edit Profile</a>
-                  <a class="dropdown-item text-dark" data-toggle="collapse" data-target=".navbar-collapse.show" (click)="onLogout()" routerLink='/home'>Log Out</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item dropdown-toggle text-dark pt-0 pb-0" id="settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>
-                  <div class="dropdown-menu" aria-labelledby="settings">
-                      <a class="dropdown-item text-dark" data-toggle="collapse" data-target=".navbar-collapse.show">My Account</a>
-                      <a class="dropdown-item text-dark" data-target="#delete-modal" data-toggle="modal">Delete Profile</a>
-                  </div>
-              </div>
-          </li>
-
-          <li class="nav-item" *ngIf="!isLogged"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" routerLink='/register'>Register</a></li>
-          <li class="nav-item" *ngIf="!isLogged"><a class="nav-link" data-target="#login-modal" data-toggle="modal">Login</a></li> -->
       </ul>
 
   </div>

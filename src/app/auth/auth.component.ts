@@ -33,7 +33,9 @@ export class AuthComponent {
   onAuthLoginSubmit() {
     const payload: any = this.authLoginForm.value;
     this.profilesService.loginUser(payload).subscribe(
-      () => {
+      (res: any) => {
+        this.profilesService.token = res.accessToken;
+        localStorage.setItem("token", res.accessToken);
         alert("Successfully Logged In");
         this.authLoginForm.reset();
         this.router.navigate(['/home']);
@@ -45,8 +47,11 @@ export class AuthComponent {
     const payload: any = this.authForm.value;
     payload.user_id = localStorage.getItem("user_id");
     payload.paid_status = "unpaid";
+
     this.profilesService.createUser(payload).subscribe(
-      () => {
+      (res: any) => {
+        this.profilesService.token = res.accessToken;
+        localStorage.setItem("token", res.accessToken);
         alert("Successfully created");
         this.authForm.reset();
         this.router.navigate(['/home']);

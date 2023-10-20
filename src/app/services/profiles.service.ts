@@ -7,6 +7,8 @@ import { environment } from "src/environments/environment";
 })
 export class ProfilesService {
 
+  token: string = "";
+
   constructor(
     private http: HttpClient
   ) { }
