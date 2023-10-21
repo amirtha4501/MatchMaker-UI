@@ -36,6 +36,7 @@ export class AuthComponent {
       (res: any) => {
         this.profilesService.token = res.accessToken;
         localStorage.setItem("token", res.accessToken);
+        localStorage.setItem("user_id", res.user_id);
         alert("Successfully Logged In");
         this.authLoginForm.reset();
         this.router.navigate(['/home']);
@@ -52,6 +53,7 @@ export class AuthComponent {
       (res: any) => {
         this.profilesService.token = res.accessToken;
         localStorage.setItem("token", res.accessToken);
+        localStorage.setItem("user_id", res.user_id);
         alert("Successfully created");
         this.authForm.reset();
         this.router.navigate(['/home']);

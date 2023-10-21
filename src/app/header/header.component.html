@@ -14,10 +14,10 @@
       
       <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" routerLink='/home'>Home</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink='/profiles'>Profiles</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink='/plans'>Plans</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink='/coupons'>Coupons</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink='/payments'>Payments</a></li>
+          <li class="nav-item"><a class="nav-link" *ngIf="this.profileService.token" routerLink='/profiles'>Profiles</a></li>
+          <li class="nav-item"><a class="nav-link" *ngIf="this.profileService.token" routerLink='/plans'>Plans</a></li>
+          <li class="nav-item"><a class="nav-link" *ngIf="this.profileService.token" routerLink='/coupons'>Coupons</a></li>
+          <li class="nav-item"><a class="nav-link" *ngIf="this.profileService.token" routerLink='/payments'>Payments</a></li>
           
           <li class="nav-item"><a class="nav-link" routerLink='/auth' *ngIf="!this.profileService.token">Sign In</a></li>
 

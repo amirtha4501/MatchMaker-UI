@@ -18,7 +18,7 @@ export class HeaderComponent {
   signout() {
     this.profileService.token = "";
     localStorage.removeItem("token");
-    this.router.navigate(['/profiles']);
+    this.router.navigate(['/home']);
   }
 
 
