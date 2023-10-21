@@ -25,6 +25,7 @@
               
           <div class="dropdown-menu dropdown-menu-right" *ngIf="this.profileService.token" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item text-dark"  data-toggle="collapse" data-target=".navbar-collapse.show" routerLink='/user-profiles'>View My Profiles</a>
+              <a class="dropdown-item text-dark"  data-toggle="collapse" data-target=".navbar-collapse.show" routerLink='/feedbacks'>Feedbacks</a>
               <a class="dropdown-item text-dark" data-toggle="collapse" data-target=".navbar-collapse.show" (click)="signout()">Log Out</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item dropdown-toggle text-dark pt-0 pb-0" id="settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>

@@ -7,7 +7,7 @@ import { environment } from "src/environments/environment";
 })
 export class ProfilesService {
 
-  token: string = "";
+  token: string = localStorage.getItem("token") || "";
 
   constructor(
     private http: HttpClient

@@ -8,6 +8,7 @@ import { PlanComponent } from './plan/plan.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CouponComponent } from './coupon/coupon.component';
 import { AuthComponent } from './auth/auth.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'plans', component: PlanComponent },
   { path: 'coupons', component: CouponComponent },
   { path: 'payments', component: PaymentComponent },
+  { path: 'feedbacks', component: FeedbackComponent },
 ];
 
 @NgModule({

@@ -17,6 +17,7 @@ import { PlanComponent } from './plan/plan.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CouponComponent } from './coupon/coupon.component';
 import { AuthComponent } from './auth/auth.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AuthComponent } from './auth/auth.component';
     PlanComponent,
     CouponComponent,
     PaymentComponent,
-    AuthComponent
+    AuthComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,

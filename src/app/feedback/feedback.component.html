@@ -1,0 +1,56 @@
+<div class="container p-5 mb-5">
+  <h5 class="pb-3">Given Feedbacks...</h5>
+  <div class="row">
+    <div class="col-sm-4 mt-2" *ngFor="let feedback of feedbacks; index as i">
+      <div class="card">
+        <h5 class="card-header">{{ feedback.feedback_id }} {{ feedback.subject }}</h5>
+        <div class="card-body">
+          <p class="card-text mb-0">
+            Feedback Type: {{ feedback.feedback_type }}
+          </p>
+          <p class="card-text mb-0">
+            Comments: {{ feedback.comments }}
+          </p>
+          <p class="card-text mb-0">
+            Rating: {{ feedback.rating }}
+          </p>
+          
+          <p class="card-text mb-0">
+            Status: <code>{{ feedback.status }}</code>
+          </p>
+          <p class="card-text mb-0">
+            Date: {{ feedback.feedback_date }}
+          </p>
+          <p class="mt-3">
+            <button type="button" class="btn btn-info btn-sm mr-2"(click)='onEdit(i)' data-toggle="modal" data-target="#statusModal">Edit Status</button>
+            <button type="submit" class="btn btn-danger btn-sm" (click)='onDelete(feedback.feedback_id)'>Delete</button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Status Modal -->
+<div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="statusModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="statusModalLabel">Edit status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form (ngSubmit)="submitStatus()">
+          <input class="form-control" type="text" name="status" [(ngModel)]="status" required>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+        <button class="btn btn-info btn-sm" (click)="submitStatus()" data-dismiss="modal" type="submit">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
